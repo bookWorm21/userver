@@ -21,8 +21,8 @@ AuthCheckerSettingsComponent::AuthCheckerSettingsComponent(
     : components::LoggableComponentBase(config, context) {
   // Reading config values from static config
   // Check for valid algorithms
-  auto algorithm = config["algorithm"].As<std::string>("sha256");
-  if (!kHashAlgToType.TryFindICase(algorithm).has_value()) {
+  auto algorithm = config["algorithm"].As<std::string>("SHA-256");
+  if (!kHashAlgToType.TryFind(algorithm).has_value()) {
     throw std::runtime_error("Algorithm is not supported: " + algorithm);
   }
   settings_.algorithm = algorithm;

@@ -27,9 +27,9 @@ enum class QopTypes {
 
 inline constexpr utils::TrivialBiMap kHashAlgToType = [](auto selector) {
   return selector()
-      .Case("md5", HashAlgTypes::kMD5)
-      .Case("sha256", HashAlgTypes::kSHA256)
-      .Case("sha512", HashAlgTypes::kSHA512);
+      .Case("MD5", HashAlgTypes::kMD5)
+      .Case("SHA-256", HashAlgTypes::kSHA256)
+      .Case("SHA-512", HashAlgTypes::kSHA512);
 };
 
 inline constexpr utils::TrivialBiMap kQopToType = [](auto selector) {
